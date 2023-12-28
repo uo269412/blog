@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="es">
+    <head>
+        <link rel="stylesheet" type="text/css" href="estiloArticulo.css">
+        <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Javier Carrillo González">
+		<meta name="description" content="Blog de Javier Carrillo González">
+        <title>DMCW_BLOG</title>
+        <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
+    </head>
+       <body>
+            <nav>
+                <a href="ejercicio1.html"><h4>Ejercicio 1</h4> </a>
+                <a href="ejercicio2.html"><h4>Ejercicio 2</h4></a>
+                <a href="ejercicio3.html"><h4>Ejercicio 3</h4></a>
+            </nav>
+        
+            <header>
+                <a href="principal.html">
+                <img id="logo" src="multimedia/logo.png" alt="Imagen del logo">
+                </a>
+            </header>
+            <main>
+                <h1>Ejercicio individual 2: Blog de difusión de contenidos </h1>
+                <img id ="entrada" src="multimedia/ej2.jpg" alt="Imagen del ejercicio 2">   
+                <hr> 
+                <section>
+                    <img src="multimedia/autor.png" alt="Imagen del autor del blog">   
+                    <h4>Javier Carrillo González</h4>
+                </section>
+                <hr>
+                <h2>Realización del ejercicio</h2>
+                <p>Para realizar esta tarea, se comenzó buscando blogs en Internet para así tener una visión general del aspecto que tendría que tener esta página. Principalmente, me he basado en dos páginas que he obtenido de la página web <a href = "https://blog.hubspot.es/website/ejemplos-de-blogs"> Ejemplos de blogs</a> donde se nos proponen diferentes ejemplos de blogs para consultar.</p>
+                <p>En el aspecto gráfico, he intentado hacer una versión diferente de la que se establece en el blog <a href="https://www.elblogsalmon.com/"> El Blog Salmón</a> decidiendo utilizar una paleta de colores parecida y una distribución parecida al menos en lo que es el apartado principal donde se muestran los artículos.</p>
+                <img src="multimedia/blogsalmon.png" alt="Imagen del blog salmón">
+                <p>También quise incluir un aside donde se muestra información, parecido a lo que se encuentra en <a href="http://santiagogarciablog.blogspot.com/"> Mandorla El blog de cómics de Santiago García </a></p>
+                <img src="multimedia/blogcomics.png" alt="Imagen de Mandorla El Blog de Cómics">
+                <p>En base a esos dos blogs, a la idea general de blog que ya tenía, y otros que he consultado, fui implementando el aspecto general del blog</p>
+
+
+                <hr>
+                <h2>Página principal</h2>
+                <p>La página principal se distribuye principalmente teniendo un grid, donde tendremos comenzando desde la parte superior, un <em>header</em> que contendrá el logo y un <em>menú de navegación</em>. A partir de ese punto, tendremos tanto el main como el aside. </p>
+                <ul>
+                    <li>En el <em>main</em> se utiliza un grid, donde iremos colocando diferentes artículos. Estos artículos a su vez tendrán un grid, para así colocar la imagen y la información de manera que quede bien distribuida. Se ha configurado la hoja de estilos para así darle un sombreado al artículo y que el cursor cambie cuando está encima, para darle más aspecto de elemento clickable.</li>
+                    <li>En el <em>aside</em> se ha utilizado como display flex, ya que teniendo tan pocos elementos y una sola columna, pensé que no era necesario utilizar otra distribución, ya que en este aside se han ido colocando secciones que contendrán como distribución grid, para así tener la información junta.</li>
+                </ul>
+                <p>Finalmente estaría el <em>footer</em>, con información del autor. Cabe destacar que esta distribución cambia en dispositivos con pantalla reducida, cambiando la distribución de elementos y realizando algún ajuste para su mejor lectura</p>
+
+                <hr>
+                <h2>Entrada del blog</h2>
+                <p>Para las entradas del blog, se ha mantenido en general la estructura header - nav - main - aside - footer, manteniendo al header, nav y footer igual, pero cambiando el resto.</p>
+                <ul>
+                    <li>En el <em>main</em>, ya no se ha utilizado un grid, y utilizan <em>dividers</em> para así dividir la información. Se ha incluido una sección que utiliza flex para así incluir el autor de la entrada; y se ha ajustado su margen y grosor para facilitar la lectura</li>
+                    <li>Se ha reducido el tamaño del <em>aside</em>, y ahora esté a nivel estructural es parecido al del index, pero contiene diferente información publicitaria, con enlaces a dichas páginas</li>
+                    <li>Cada entrada del blog además incluirá o un vídeo (realizado con Video.js, una galería o un audio personalizado)</li>
+                </ul>
+                <hr>
+                <h2>Reproductor de vídeo</h2>
+                <p>Aquí tenemos como ejemplo, un vídeo de un anuncio de KitKat utilizando Video.js</p>
+     
+            </main>
+
+            <aside>
+                <section>
+                    <a href="https://www.lamansiondelterror.es/merchandising/7390-figura-power-rangers-time-force-red-ranger-hasbro-15-cm.html">
+                        <h3>Power Rangers Figura Red Ranger</h3>
+                        <img src="multimedia/anuncio1.png" alt="Imagen del anuncio de la figura de Power Rangers">    
+                        <h4>Colección Rayo.Tamaño: 15 cm.Figura articulada.Contiene accesorios.</h4>
+                    </a>
+                </section>
+                <section>
+                    <a href="https://www.game.es/joy-con-set-izda-dcha-edicion-the-legend-of-zelda-skyward-sword-nintendo-switch-187438">
+                        <h3>Joy-Con Skyward Sword</h3>
+                        <img src="multimedia/anuncio2.png" alt="Imagen del anuncio de los Joy-Con de Skyward Sword">    
+                        <h4>Joy-Con para tu Nintendo Switch inspirado en la Espada Maestra y el Escudo Hyliano de Link.</h4>
+                    </a>
+                </section>
+                <section>
+                    <a href="https://www.zavvi.es/merch-action-figures/mcfarlane-dc-collector-multipack-green-lantern-hal-jordan-vs-dawnbreaker-action-figure/12899231.html">
+                        <h3>Figura Green Lantern VS Dawnbreaker</h3>
+                        <img src="multimedia/anuncio3.png" alt="Imagen de la figura de Green Lantern">    
+                        <h4>Figura detallada de la historia de DC multiverso.</h4>
+                    </a>
+                </section>
+            </aside>
+            <footer>
+                <p>Autor: Javier Carrillo González</p>
+            </footer>
+    </body>
+</html>

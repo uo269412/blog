@@ -1,0 +1,79 @@
+#audioplayer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding-bottom: 10%;
+  border-radius: 10em;
+}
+
+.audio-container {
+  background-color: #ffffff;
+  display: grid;
+  padding: 20px 30px;
+  position: relative;
+  margin: 100px 0;
+  box-shadow: 0 0 0 0 #f7d5b1, 0 0 50px 0 #f7d5b1;
+}
+
+.navigation {
+  margin-top: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.action-btn {
+  background-color: #fff;
+  border: 0;
+  color: #dfdbdf;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 20px;
+}
+
+.action-btn.action-btn-big {
+  color: #cdc2d0;
+  font-size: 30px;
+}
+
+.action-btn:focus {
+  outline: 0;
+}
+
+.audio-info {
+  background-color: #f7d5b183;
+  position: absolute;
+  top: 100%;
+  width: 80%;
+  padding:10%;
+  box-shadow: 0 0 0 0 #f7d5b1, 0 17px 50px 0 #f7d5b1;
+
+}
+
+.info {
+  display:flex;
+  gap:60%
+}
+
+.progress-container {
+  background: #c0c0c0;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  height: 8px;
+  width: 100%;
+}
+
+.progress {
+  background-color: #f17d20;
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html lang="es">
+    <head>
+        <link rel="stylesheet" type="text/css" href="estiloArticulo.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Javier Carrillo González">
+		<meta name="description" content="Blog de Javier Carrillo González">
+        <title>DMCW_BLOG</title>
+        <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+        <script src="fabric.min.js"></script>
+        <script src="gallery.js"></script>
+        
+    </head>
+       <body>
+            <nav>
+                <a href="ejercicio1.html"><h4>Ejercicio 1</h4> </a>
+                <a href="ejercicio2.html"><h4>Ejercicio 2</h4></a>
+                <a href="ejercicio3.html"><h4>Ejercicio 3</h4></a>
+            </nav>
+        
+            <header>
+                <a href="principal.html">
+                <img id="logo" src="multimedia/logo.png" alt="Imagen del logo">
+                </a>
+            </header>
+            <main>
+                <h1>Ejercicio individual 1: Dibujo colaborativo con WebSockets </h1>
+                <img id ="entrada" src="multimedia/ej1.jpg" alt="Imagen del ejercicio 1">   
+                <hr> 
+                <section>
+                    <img src="multimedia/autor.png" alt="Imagen del autor del blog">   
+                    <h4>Javier Carrillo González</h4>
+                </section>
+                <hr>
+                <h2>Realización del ejercicio</h2>
+                <p>Para la realización del ejercicio, se necesitaba utilizar tanto WebSockets como Fabric.js. Creando un servidor WebSockets de manera muy parecida a como se hizo en clase en el ejercicio de Reveal.js </p>
+                <p>Se tuvieron que crear principalmente dos scripts para el canvas:</p>
+                <ul>
+                    <li><em>server.js:</em>Contiene el código de despliegue del servidor. Se definen varias variables (como las figuras que están dibujadas y los usuarios conectados). Una vez un cliente se conecta con el servidor, aumentará el número de usuarios y se recogerán todas las figuras dibujadas y se enviarán al cliente, que procesará la información para así mostrar el número de usuarios y las figuras en el canvas del fichero HTML. Cuando el servidor recibe un mensaje por parte del cliente, lo parseará y así determinará que clase de información llega (pudiendo ser un mensaje para limpiar el canvas, e información de una figura, que determinado si una variable asignada a la figura que se ha llamado isMoving, determinará si la figura se está moviendo por lo que habría que actualizar su posición, o si se acaba de crear y hay que añadirla al canvas). Cuando el cliente se desconecta, también se actualizarán el número de usuarios, descontándose uno.</li>
+                    <li><em>canvas.js:</em>Contiene el código del cliente. Se realizará la conexión con el servidor, y será el encargado de crear las tres figuras y enviarle esa información al servidor para que añada las figuras al canvas, además del mensaje de limpiar el canvas. Cuando el cliente se conecta al servidor, recibirá toda la información de las figuras ya existentes para así dibujarlas, así como de los usuarios conectados, para así mostrarlos en el fichero HTML. En el cliente se determina alguna variable adicional como isMoving para determinar el estado de las figuras que se mandan al servidor, así pudiendo saber si se ha creado una figura y hay que añadirla o se ha movido y hay que actualizar su posición</li>
+                </ul>
+                <hr>
+                <h2>Canvas</h2>
+                <p>Aquí tenemos el canvas donde se puede pintar. Tendremos cuatro botones, que añadirán un círculo, un cuadrado o un triángulo; además de un botón que limpiará el canvas. Además se podrán desplazar las figuras y esto se reflejará en el servidor. También se podrá limpiar el canvas, actualizando su estado en el servidor. Finalmente, también se muestra el número de usuarios conectados.</p>
+                <div id="zonaPintar">
+                    <canvas id="canvas" width = "1280" height="600"></canvas>
+                    <script src="canvas.js"></script>
+                    <div id="botonesPintar">
+                        <button id="btnCirculo" onclick="crearCirculo()">
+                            <img src="multimedia/circulo.png">
+                            Círculo
+                        </button>
+                        <button id="btnTriangulo" onclick="crearTriangulo()">
+                            <img src="multimedia/piramide.png">
+                            Triángulo
+                        </button>
+                        <button id="btnCuadrado" onclick="crearCuadrado()">
+                            <img src="multimedia/cuadrado.png">
+                            Cuadrado
+                        </button>
+                        <button id="btnLimpiar" onclick="limpiarCanvas()">
+                            <img src="multimedia/limpio.png">
+                            Limpiar canvas
+                        </button>
+                        <img src="multimedia/usuario.png">
+                        <span id="clientesConectados"></span>
+                    </div>
+                </div>
+
+                <hr>
+                <h2>Galería de imágenes</h2>
+                <p>Aquí tenemos una galería de imágenes, donde podemos visualizar capturas del ejercicio. Clickando en las imágenes más pequeñas, podremos visualizarlas como imagen destacada. También cambia el cursor cuando nos situamos encima de una imagen, y esta se hará más grande para dar sensación de elemento interaccionable. Las tres primeras imágenes de la galería representarán el código de tanto el servidor (servidor.js) como para el cliente (canvas.js)</p>
+
+                
+                <article>
+                    <img id="destacada" src="multimedia/5.png" alt="Imagen del código del servidor">
+                    <img src="multimedia/5.png" onClick ="changeImage(this.src)" alt="Imagen del código del servidor">
+                    <img src="multimedia/6.png" onClick ="changeImage(this.src)" alt="Parte del código del cliente">
+                    <img src="multimedia/7.png" onClick ="changeImage(this.src)" alt="Parte del código del cliente">
+                    <img src="multimedia/1.png" onClick ="changeImage(this.src)" alt="Demo del canvas">
+                    <img src="multimedia/3.png" onClick ="changeImage(this.src)" alt="Demo del canvas">
+                    <img src="multimedia/4.png" onClick ="changeImage(this.src)" alt="Demo del canvas">
+                </article>
+
+
+            </main>
+
+            <aside>
+                <section>
+                    <a href="https://www.lamansiondelterror.es/merchandising/7390-figura-power-rangers-time-force-red-ranger-hasbro-15-cm.html">
+                        <h3>Power Rangers Figura Red Ranger</h3>
+                        <img src="multimedia/anuncio1.png" alt="Imagen del anuncio de la figura de Power Rangers">    
+                        <h4>Colección Rayo.Tamaño: 15 cm.Figura articulada.Contiene accesorios.</h4>
+                    </a>
+                </section>
+                <section>
+                    <a href="https://www.game.es/joy-con-set-izda-dcha-edicion-the-legend-of-zelda-skyward-sword-nintendo-switch-187438">
+                        <h3>Joy-Con Skyward Sword</h3>
+                        <img src="multimedia/anuncio2.png" alt="Imagen del anuncio de los Joy-Con de Skyward Sword">    
+                        <h4>Joy-Con para tu Nintendo Switch inspirado en la Espada Maestra y el Escudo Hyliano de Link.</h4>
+                    </a>
+                </section>
+                <section>
+                    <a href="https://www.zavvi.es/merch-action-figures/mcfarlane-dc-collector-multipack-green-lantern-hal-jordan-vs-dawnbreaker-action-figure/12899231.html">
+                        <h3>Figura Green Lantern VS Dawnbreaker</h3>
+                        <img src="multimedia/anuncio3.png" alt="Imagen de la figura de Green Lantern">    
+                        <h4>Figura detallada de la historia de DC multiverso.</h4>
+                    </a>
+                </section>
+            </aside>
+
+            <footer>
+                <p>Autor: Javier Carrillo González</p>
+            </footer>
+    </body>
+</html>

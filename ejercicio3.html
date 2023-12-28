@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html lang="es">
+    <head>
+        <link rel="stylesheet" type="text/css" href="estiloArticulo.css">
+        <link rel="stylesheet" type="text/css" href="estiloAudio.css">
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+      />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Javier Carrillo González">
+		<meta name="description" content="Blog de Javier Carrillo González">
+
+        <title>DMCW_BLOG</title>
+    </head>
+       <body>
+            <nav>
+                <a href="ejercicio1.html"><h4>Ejercicio 1</h4> </a>
+                <a href="ejercicio2.html"><h4>Ejercicio 2</h4></a>
+                <a href="ejercicio3.html"><h4>Ejercicio 3</h4></a>
+            </nav>
+        
+            <header>
+                <a href="index.html">
+                <img id="logo" src="multimedia/logo.png" alt="Imagen del logo">
+                </a>
+            </header>
+            <main>
+                <h1>Ejercicio en grupo: Composición de un vídeo / podcast en grupo </h1>
+                <img id ="entrada" src="multimedia/ej3.png" alt="Imagen del ejercicio 3">   
+                <hr> 
+                <section>
+                    <h4>David Álvarez Fidalgo, María Flórez Miranda, Carmen Sirgo López, Javier Carrillo González</h4>
+                </section>
+                <hr>
+                <h2>Ideas y selección de tema</h2>
+                <p>Para este ejercicio, primero tuvimos que barajar la idea de o realizar un vídeo o realizar un podcast.</p>
+                <p>Ya que la mayoría del grupo hemos realizado algún vídeo de forma individual, pero no habíamos realizado nunca ningún podcast, decidimos hacer este último para ver como es la realización de este.</p>
+                <p>Una vez establecimos que íbamos a realizar un podcast, tuvimos que determinar de que tema íbamos a hablar, así teniendo varias ideas:</p>
+                <ul>
+                    <li><em>Podcast sobre videojuegos:</em> Ya que tenemos el gusto de los videojuegos en común, se nos ocurrió hablar de nuestros videojuegos favoritos, viendo cuál es el favorito de cada uno y viendo que nos parece al resto. Aunque esto era un tema fácil para todos los integrantes, creímos que no se podría incluir ningún debate si hablasemos de ello.</li>
+                    <li><em>Podcast acerca de la mejor película/serie/videojuego del año:</em> Aquí, también hablaríamos de cosas que nos gustan a todos los integrantes, pero sí que habría un debate ya que intentaríamos ponernos en común con la decisión de cual es la mejor película, serie o videojuego del año, desde diferentes puntos de vista que son los gustos de cada uno.</li>
+                    <li><em>Podcast sobre inteligencia artifical:</em> En este podcast hablaríamos a rasgos generales de las ia y su impacto más reciente, con inclusiones como generadores de imágenes, chatGPT y otro tipo de inteligencias que están en la boca de muchos a día de hoy. Este sería un tema del cual nos tendríamos que informar más, pero en el cual se generaría debate debido a nuestros diferentes puntos de vista.</li>
+                </ul>
+                <p>Finalmente, la idea que decidimos escoger fue el podcast de inteligencia artificial.</p>
+                <img src="multimedia/ia.jpg" alt="Imagen del tema de podcast escogido, inteligencia artificial">   
+                <hr>
+                <h2>Realización del podcast</h2>
+                <p>Pensamos en grabarlo de manera presencial, así que aprovechando el tiempo en clase, buscamos un aula que tuviese poco eco para así realizar una prueba de sonido, grabando el podcast utilizando nuestros dispositivos móviles. Esto resultaba en una versión con una calidad bastante pobre así que desechamos la idea de grabarlo presencialmente.</p>
+                <p>Tras ello, la opción clara era grabarlo de manera telemática, por lo que nos pusimos en llamada para establecer como íbamos a proceder.</p>
+                <p>Decidimos que la mejor idea sería grabarnos por separado mientras estábamos en llamada y luego juntar los audios. Además con eso, podríamos utilizar supresores de ruido que pudiesen mejorar la calidad del audio.</p>
+                <p>Adicionalmente, decidimos establecer una duración de 15 minutos para que así pudiesemos cubrir varios temas relacionados con la IA:</p>
+                <ul>
+                    <li>Impacto a nivel educativo, tanto a nivel en la universidad como en la escuela/instituto.</li>
+                    <li>Impacto en el trabajo.</li>
+                    <li>Implicaciones éticas.</li>
+                    <li>Inteligencia artificial relativa al arte y moralidad de su uso.</li>
+                </ul>
+                <p>Finalmente, decidimos que empezara a hablar David y que fuese el encargado de moderar.</p>
+                <P>Por último, tras realizar la mezcla, decidimos incluir una intro y un outro para el podcast, y subir a este a un servidor proporcionado por Icecast</p>
+
+                <hr>
+                <h2>Proceso de edición</h2>
+                <p>Para la edición del podcast, se grabaron de forma independiente los micrófonos de cada uno y luego se eliminaron los fragmentos donde los participantes no hablaban, para que no hubiese ruido de fondo</p>
+
+
+                <p>Tras realizar esa edición y juntar todas las voces, finalmente se añadió la intro y la outro.</p>
+
+                <hr>
+                <h2>Servidor donde se aloja el audio</h2>
+                <p>También decidimos incluir el audio en el servidor de Icecast. Para ello, se realizó una instalación en Ubuntu de este, se abrió el puerto 9020 para el uso de Icecast y finalmente se subió el archivo a Icecast. Luego simplemente se referencia a ese archivo en el audio para poder oirlo. Se utilizó VLC para emitir el archivo de audio, pero quedaba en streaming solo el tiempo que duraba y luego se eliminaba. Como no se encontró solución, no se decidió dejar subido en el servidor, pero se menciona el intento.</p>
+                <img src="multimedia/icecast.jpg" alt="Imagen de una subida de prueba utilizando Icecast">   
+                <hr>
+                <h2>Reproductor de audio</h2>
+                <p>Aquí se encuentra el archivo para reproducir del podcast. Se ha incluido un reproductor de audio para así reemplazar al defecto, con una barra de progreso y una función que permite ver el máximo del audio. También se ha configurado para que el botón de play y pausa cambien según su estado. </p>
+                <div id="audioplayer">
+                <div class="audio-container" id="audio-container">
+                    <audio src="multmedia/audio.mp3" id="audio"></audio>
+                    <div class="img-container">
+                      <img src="multimedia/podcast.png" alt="Imagen del grupo realizada por Carmen Sirgo" id="cover" />
+                    </div>
+                    <div class="navigation">
+                      <button id="play" class="action-btn action-btn-big">
+                        <i class="fas fa-play"></i>
+                      </button>
+                    </div>
+                    <div class="audio-info">
+                      <h4 id="title">Podcast de IA</h4>
+          
+                      <div class="progress-container" id="progress-container">
+                        <div class="progress" id="progress"></div>
+                    
+                      </div>
+                      <div class="info" id="info">
+                      <p>00:00</p>
+                      <p id="audioMax">00:00</p>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+            </main>
+
+            <aside>
+                <section>
+                    <a href="https://www.lamansiondelterror.es/merchandising/7390-figura-power-rangers-time-force-red-ranger-hasbro-15-cm.html">
+                        <h3>Power Rangers Figura Red Ranger</h3>
+                        <img src="multimedia/anuncio1.png" alt="Imagen del anuncio de la figura de Power Rangers">    
+                        <h4>Colección Rayo.Tamaño: 15 cm.Figura articulada.Contiene accesorios.</h4>
+                    </a>
+                </section>
+                <section>
+                    <a href="https://www.game.es/joy-con-set-izda-dcha-edicion-the-legend-of-zelda-skyward-sword-nintendo-switch-187438">
+                        <h3>Joy-Con Skyward Sword</h3>
+                        <img src="multimedia/anuncio2.png" alt="Imagen del anuncio de los Joy-Con de Skyward Sword">    
+                        <h4>Joy-Con para tu Nintendo Switch inspirado en la Espada Maestra y el Escudo Hyliano de Link.</h4>
+                    </a>
+                </section>
+                <section>
+                    <a href="https://www.zavvi.es/merch-action-figures/mcfarlane-dc-collector-multipack-green-lantern-hal-jordan-vs-dawnbreaker-action-figure/12899231.html">
+                        <h3>Figura Green Lantern VS Dawnbreaker</h3>
+                        <img src="multimedia/anuncio3.png" alt="Imagen de la figura de Green Lantern">    
+                        <h4>Figura detallada de la historia de DC multiverso.</h4>
+                    </a>
+                </section>
+            </aside>
+
+            <footer>
+                <p>Autor: Javier Carrillo González</p>
+            </footer>
+            <script src="audio.js"></script>
+    </body>
+</html>
